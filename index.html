@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Anushka sai  | Class 9 Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #08111f;
+            color: white;
+            line-height: 1.6;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --dark: #08111f;
+            --card: #111c2e;
+            --text: #ffffff;
+            --muted: #a7b1c2;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(8, 17, 31, 0.95);
+            z-index: 1000;
+            border-bottom: 1px solid #263247;
+        }
+
+        nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--muted);
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .menu {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* ================= GENERAL ================= */
+
+        section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: var(--muted);
+        }
+
+
+        /* ================= HOME ================= */
+
+        #home {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero {
+            width: 100%;
+
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero small {
+            color: #a78bfa;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            line-height: 1.1;
+            margin: 15px 0;
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero h3 {
+            color: var(--muted);
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 600px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin-right: 10px;
+
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .outline {
+            border: 1px solid var(--primary);
+            color: white;
+        }
+
+        .profile {
+            width: 320px;
+            height: 320px;
+            margin: auto;
+
+            border-radius: 50%;
+            padding: 8px;
+
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--secondary)
+            );
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            border-radius: 50%;
+
+            border: 7px solid var(--dark);
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .about p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .detail {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #263247;
+        }
+
+        .detail strong {
+            color: #a78bfa;
+            display: block;
+        }
+
+
+        /* ================= JOURNEY ================= */
+
+        .journey {
+            background: var(--card);
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #263247;
+        }
+
+        .journey p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+
+        /* ================= EDUCATION ================= */
+
+        .education {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .education-card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #263247;
+        }
+
+        .education-card h3 {
+            color: #c4b5fd;
+        }
+
+        .education-card p {
+            color: var(--muted);
+        }
+
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            background: var(--card);
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            border: 1px solid #263247;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-7px);
+            border-color: var(--primary);
+        }
+
+        .skill-icon {
+            font-size: 40px;
+        }
+
+        .skill p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #263247;
+        }
+
+        .project img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 22px;
+        }
+
+        .project-content p {
+            color: var(--muted);
+            margin: 10px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #202d44;
+            color: #c4b5fd;
+            padding: 5px 10px;
+            margin: 3px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+
+        /* ================= ACHIEVEMENTS ================= */
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .achievement {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #263247;
+        }
+
+        .achievement h3 {
+            color: #c4b5fd;
+        }
+
+        .achievement p {
+            color: var(--muted);
+        }
+
+
+        /* ================= HOBBIES ================= */
+
+        .hobbies {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .hobby {
+            background: var(--card);
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            border: 1px solid #263247;
+        }
+
+        .hobby-icon {
+            font-size: 40px;
+        }
+
+
+        /* ================= GOALS ================= */
+
+        .goals {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .goal {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #263247;
+        }
+
+        .goal h3 {
+            color: #c4b5fd;
+            margin-bottom: 10px;
+        }
+
+        .goal li {
+            color: var(--muted);
+            margin: 8px 0;
+            list-style-position: inside;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            text-align: center;
+            background: var(--card);
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .contact p {
+            color: var(--muted);
+            margin: 15px 0 25px;
+        }
+
+        .contact a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            border: 1px solid #394862;
+            padding: 10px 18px;
+            border-radius: 7px;
+            margin: 5px;
+        }
+
+        .contact a:hover {
+            background: var(--primary);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #263247;
+            color: var(--muted);
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 850px) {
+
+            .hero,
+            .about,
+            .goals {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero p {
+                margin: auto;
+            }
+
+            .education,
+            .projects,
+            .achievements {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .skills,
+            .hobbies {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media(max-width: 600px) {
+
+            nav ul {
+                display: none;
+
+                position: absolute;
+                top: 65px;
+                left: 0;
+
+                width: 100%;
+
+                background: var(--dark);
+
+                flex-direction: column;
+                text-align: center;
+
+                padding: 25px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .profile {
+                width: 250px;
+                height: 250px;
+            }
+
+            .education,
+            .projects,
+            .achievements,
+            .skills,
+            .hobbies {
+                grid-template-columns: 1fr;
+            }
+
+            .details {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+             <span>ANUSHKA</span> 
+        </div>
+
+        <div class="menu" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <ul id="navMenu">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#journey">Journey</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#achievements">Achievements</a>
+            </li>
+
+            <li>
+                <a href="#goals">Goals</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home">
+
+    <div class="hero">
+
+        <div>
+
+            <small>
+                WELCOME TO MY DIGITAL PORTFOLIO
+            </small>
+
+            <h1>
+                Hi, I'm
+                <span> Anushka sai </span>
+            </h1>
+
+            <h3>
+                Class 9 Student | Learner | Explorer
+            </h3>
+
+            <p>
+                I am a Class 9 student of
+                <strong> PM SHRI KV JASHPUR </strong>.
+                I enjoy learning new things, exploring technology,
+                participating in activities and developing my skills.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#about" class="btn primary">
+                    About Me
+                </a>
+
+                <a href="#projects" class="btn outline">
+                    My Projects
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile">
+
+            <!--
+                PUT YOUR PHOTO HERE
+
+                Save your photo as:
+                images/profile.jpg
+            -->
+
+            <img
+                src="images/profile.jpg"
+                alt="My Profile Photo"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="title">
+
+        <h2>About Me</h2>
+
+        <p>
+            A little bit about myself
+        </p>
+
+    </div>
+
+
+    <div class="about">
+
+        <div>
+
+            <p>
+                Hello! My name is
+                <strong> Anushka </strong>.
+                I am currently studying in Class 9 at
+                <strong> PM shri kv jashpur </strong>.
+            </p>
+
+            <p>
+                I am a curious and enthusiastic student who
+                enjoys learning new concepts and exploring
+                different subjects and activities.
+            </p>
+
+            <p>
+                My favorite subjects are
+                <strong> biology </strong>,
+                <strong> maths </strong>
+                and
+                <strong> computer science </strong>.
+            </p>
+
+            <p>
+                My hobbies include
+                <strong> singing </strong>,
+                <strong> paintng </strong>
+                and
+                <strong> cooking </strong>.
+            </p>
+
+        </div>
+
+
+        <div class="details">
+
+            <div class="detail">
+
+                <strong>Name</strong>
+
+                 Anushka sai 
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>Class</strong>
+
+                IX -  A 
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>School</strong>
+
+                 PM shri kv jashpur 
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>Session</strong>
+
+                2026 - 2027
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>City</strong>
+
+                 JASHPUR 
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>Roll Number</strong>
+
+                 16 
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= JOURNEY ================= -->
+
+<section id="journey">
+
+    <div class="title">
+
+        <h2>My Class 9 Journey</h2>
+
+        <p>
+            Learning, growing and discovering myself
+        </p>
+
+    </div>
+
+
+    <div class="journey">
+
+        <p>
+            My Class 9 journey has been a memorable experience
+            filled with learning, challenges, new experiences
+            and personal growth.
+        </p>
+
+        <p>
+            During this year, I have learned many new concepts
+            in different subjects and understood the importance
+            of regular study and consistent effort.
+        </p>
+
+        <p>
+            Apart from academics, I have participated in
+            <strong> SCHOOL ACTIVITIES </strong>.
+            These activities helped me develop teamwork,
+            communication, confidence and leadership skills.
+        </p>
+
+        <p>
+            I also worked on different projects such as
+            <strong> PROJECT NAME </strong>, which helped me
+            improve my creativity and problem-solving abilities.
+        </p>
+
+        <p>
+            Class 9 has taught me that success is not only
+            about marks. It is also about learning from mistakes,
+            becoming responsible and continuously improving myself.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+    <div class="title">
+
+        <h2>My Education</h2>
+
+        <p>
+            My Journey as a Class 9 Student
+
+My journey as a Class 9 student has been full of learning, challenges, new experiences, and personal growth. This year has helped me become more responsible, confident, and curious about the world around me.
+
+As I progressed through Class 9, I learned that education is not only about getting good marks but also about developing good habits, understanding concepts, working with others, and learning from mistakes. I have tried to improve myself in academics while also taking part in activities beyond the classroom.
+
+One of the most important parts of my journey has been discovering my interests. I enjoy learning about technology, exploring new ideas, working on creative projects, and improving my skills. Every new project and activity has taught me something different and helped me understand what I enjoy doing.
+
+There have also been challenges along the way. Sometimes managing studies, projects, activities, and personal time was difficult. However, these experiences taught me the importance of time management, patience, consistency, and never giving up when something feels difficult.
+
+I am proud of the progress I have made during Class 9. I know there is still a lot to learn, and I look forward to improving my knowledge, discovering new interests, and becoming a better version of myself.
+
+Class 9 has been more than just another school year—it has been an important step in my journey of learning, growing, and discovering my potential.
+        </p>
+
+    </div>
+
+
+    <div class="education">
+
+
+        <div class="education-card">
+
+            <h3>Class 9</h3>
+
+            <p>
+                <strong> PM SHRI KV JASHPUR </strong>
+            </p>
+
+            <p>
+                2026 - 2027
+            </p>
+
+            <p>
+                Currently studying Class 9 and
+                exploring different academic subjects.
+            </p>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>Class 8</h3>
+
+            <p>
+                <strong> PM SHRI KV JASHPUR </strong>
+            </p>
+
+            <p>
+                2025 - 2026
+            </p>
+
+            <p>
+                Completed Class 8 with
+                 great grades in first division .
+            </p>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>Favorite Subjects</h3>
+
+            <p>
+                Mathematics
+            </p>
+
+            <p>
+                Science
+            </p>
+
+            <p>
+                Computer / IT
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="title">
+
+        <h2>My Skills</h2>
+
+        <p>
+            Skills I am developing
+        </p>
+
+    </div>
+
+
+    <div class="skills">
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                💻
+            </div>
+
+            <h3>Computer Skills</h3>
+
+            <p>
+                Basic computer knowledge,
+                internet research and digital tools.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                🌐
+            </div>
+
+            <h3>Web Development</h3>
+
+            <p>
+                Basic HTML, CSS and website design.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                🧠
+            </div>
+
+            <h3>Problem Solving</h3>
+
+            <p>
+                Logical thinking and finding
+                solutions to problems.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                🎤
+            </div>
+
+            <h3>Communication</h3>
+
+            <p>
+                Presentations, teamwork and
+                expressing ideas.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="title">
+
+        <h2>My Projects</h2>
+
+        <p>
+            Things I have created and learned from
+        </p>
+
+    </div>
+
+
+    <div class="projects">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project">
+
+            <img
+                src="images/project1.jpg"
+                alt="Project 1"
+            >
+
+            <div class="project-content">
+
+                <h3>My Portfolio Website</h3>
+
+                <p>
+                    A personal digital portfolio created
+                    using HTML and CSS to showcase my
+                    academic journey, skills and achievements.
+                </p>
+
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+
+            </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ACHIEVEMENTS ================= -->
+
+<section id="achievements">
+
+    <div class="title">
+
+        <h2>My Achievements</h2>
+
+        <p>
+            Awards, certificates and accomplishments
+        </p>
+
+    </div>
+
+
+    <div class="achievements">
+
+
+        <div class="achievement">
+
+            <h3>🏆  ACHIEVEMENT 1 </h3>
+
+            <p>
+                 Competition / Event Name 
+            </p>
+
+            <p>
+                 YEAR 
+            </p>
+
+        </div>
+
+
+        <div class="achievement">
+
+            <h3>🥇  ACHIEVEMENT 2 </h3>
+
+            <p>
+                 Competition / Activity 
+            </p>
+
+            <p>
+                 YEAR 
+            </p>
+
+        </div>
+
+
+        <div class="achievement">
+
+            <h3>📜  CERTIFICATE </h3>
+
+            <p>
+                 CERTIFICATE / COURSE NAME 
+            </p>
+
+            <p>
+                 YEAR 
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= HOBBIES ================= -->
+
+<section>
+
+    <div class="title">
+
+        <h2>My Hobbies & Interests</h2>
+
+        <p>
+            Things I enjoy doing
+        </p>
+
+    </div>
+
+
+    <div class="hobbies">
+
+
+        <div class="hobby">
+
+            <div class="hobby-icon">
+                📚
+            </div>
+
+            <h3>Reading</h3>
+
+            <p>
+                 biography 
+            </p>
+
+        </div>
+
+
+        <div class="hobby">
+
+            <div class="hobby-icon">
+                💻
+            </div>
+
+            <h3>Coding</h3>
+
+            <p>
+                Learning HTML, CSS and programming.
+            </p>
+
+        </div>
+
+
+        <div class="hobby">
+
+            <div class="hobby-icon">
+                ⚽
+            </div>
+
+            <h3>Sports</h3>
+
+            <p>
+                 Bedminton 
+            </p>
+
+        </div>
+
+
+        <div class="hobby">
+
+            <div class="hobby-icon">
+                🎨
+            </div>
+
+            <h3>Creativity</h3>
+
+            <p>
+                 DRAWING / MUSIC / WRITING / ETC. 
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GOALS ================= -->
+
+<section id="goals">
+
+    <div class="title">
+
+        <h2>My Goals</h2>
+
+        <p>
+            Want to explore world
+        </p>
+
+    </div>
+
+
+    <div class="goals">
+
+
+        <div class="goal">
+
+            <h3>🎯 Short-Term Goals</h3>
+
+            <ul>
+
+                <li>
+                    Improve my academic performance.
+                </li>
+
+                <li>
+                    Develop better time-management skills.
+                </li>
+
+                <li>
+                    Learn new computer skills.
+                </li>
+
+                <li>
+                    Participate in more school activities.
+                </li>
+
+                <li>
+                    Improve my communication skills.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="goal">
+
+            <h3>🚀 Future Goals</h3>
+
+            <ul>
+
+                <li>
+                    Explore my career interests.
+                </li>
+
+                <li>
+                    Become highly skilled in technology.
+                </li>
+
+                <li>
+                    Continue learning new things.
+                </li>
+
+                <li>
+                    Build meaningful projects.
+                </li>
+
+                <li>
+                    Become a successful and responsible person.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section>
+
+    <div class="title">
+
+        <h2>Let's Connect</h2>
+
+        <p>
+            Thank you for visiting my portfolio!
+        </p>
+
+    </div>
+
+
+    <div class="contact">
+
+        <h2>
+             ANUSHKA SAI 
+        </h2>
+
+        <p>
+            Class 9 Student |  PM SHRI KV JASHPUR 
+        </p>
+
+        <p>
+            Email:
+             saigajanand274@gmail.com 
+        </p>
+
+
+        <a href="saigajanand274@gmail.com">
+            📧 Email
+        </a>
+
+        <a href="#">
+            💻 GitHub
+        </a>
+
+        <a href="anuu.linkedin">
+            🔗 LinkedIn
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026  ANUSHKA  | Class 9 Digital Portfolio
+    </p>
+
+    <p>
+        "Learn • Grow • Create • Inspire"
+    </p>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    function toggleMenu() {
+
+        document
+            .getElementById("navMenu")
+            .classList.toggle("active");
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
